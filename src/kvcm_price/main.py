@@ -33,7 +33,7 @@ async def on_ready():
         update_info.start()
 
 
-@tasks.loop(seconds=15)
+@tasks.loop(seconds=300)
 async def update_info():
     price, supply = get_info()
 
