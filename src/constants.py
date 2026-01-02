@@ -1,0 +1,28 @@
+import os
+
+from web3 import Web3
+
+#### Klima 2.0 Discord Bots ####
+
+# Token Decimals
+K2_DECIMALS = 18
+KVCM_DECIMALS = 18
+USDC_DECIMALS = 6
+
+# Base Network Token Addresses
+K2_ADDRESS = Web3.to_checksum_address('0x59081d974a0C635Fae3e8195F34f879B591B6519')
+KVCM_ADDRESS = Web3.to_checksum_address('0x00fBAC94Fec8D4089d3fe979F39454F48c71A65d')
+
+WETH_ADDRESS = Web3.to_checksum_address('0x4200000000000000000000000000000000000006')
+USDC_ADDRESS = Web3.to_checksum_address('0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913')
+
+# LP Pool Addresses
+KVCM_USDC_AERODROME_POOL = Web3.to_checksum_address('0x5C0D76fab1822bDeb47308eD6028231761ED723E')
+KVCM_K2_AERODROME_POOL = Web3.to_checksum_address('0x578f2f191C6b67D547bACA166B6B2aa9Dc8CB691')
+
+WETH_USDC_AERODROME_POOL = Web3.to_checksum_address('0xcdac0d6c6c59727a65f871236188350531885c43')
+
+# Legacy Klima
+KLIMA_BASE_ADDRESS = Web3.to_checksum_address('0xDCEFd8C8fCc492630B943ABcaB3429F12Ea9Fea2')
+KLIMA_DECIMALS = 9
+KLIMA_WETH_AERODROME_POOL = Web3.to_checksum_address('0xB37642E87613d8569Fd8Ec80888eA6c63684E79e')
