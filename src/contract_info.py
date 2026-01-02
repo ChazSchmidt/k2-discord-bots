@@ -80,13 +80,14 @@ def kvcm_usdc_aerodrome_price(web3):
 def kvcm_k2_aerodrome_price(web3):
     aero_price = AerodromePrice()
     kvcm_usdc_price = kvcm_usdc_aerodrome_price(web3)
-    k2_kvcm_price = aero_price.get_spot_price(
+    k2_per_kvcm = aero_price.get_spot_price(
         KVCM_ADDRESS,
         KVCM_K2_AERODROME_POOL,
         token_in_decimals=KVCM_DECIMALS
     )
-    ## multiply k2_kvcm_price by kvcm_usdc_price to get the price of K2
-    return k2_kvcm_price * kvcm_usdc_price
+    ## Convert from "K2 per KVCM" to "KVCM per K2", then multiply by USD per KVCM
+    kvcm_per_k2 = 1 / k2_per_kvcm if k2_per_kvcm != 0 else 0
+    return kvcm_per_k2 * kvcm_usdc_price
 
 def token_supply(web3, token_address, abi, decimals=None):
     '''
